@@ -6,8 +6,9 @@ console.log("queryurl: " + queryURL);
 
 $.ajax({
     url: queryURL,
-    method: "GET"
-    }).then(function(response) {
-        console.log(response);
+    method: "GET",
+    datatype: "json",
+    }).then(function(json) {
+        console.log(json);
 
     });
