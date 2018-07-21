@@ -1,0 +1,44 @@
+body header {
+    background-color: black;
+}
+
+body {
+    background-color: #94FF38;
+}
+
+.topHeader {
+    background-color: black;
+    border-bottom: solid 1px white;
+    height: 5em;
+    opacity: .5;
+}
+
+.bottomBorder {
+    background-color: black;
+
+}
+
+.pageTitle {
+    color: orange;
+    padding: 1em;
+}
+
+section div.container { 
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+#searchFields h2 {
+    font-size: 1.5em;
+}
+
+table#searchResultsTable {
+    border: solid 1px black;
+}
+
+#youtubeVideo {
+    border: solid 1px black;
+    max-width: 350px;
+    height: 200px;
+}
+/*#94FF38*/

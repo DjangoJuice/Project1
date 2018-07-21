@@ -26,15 +26,45 @@
                 href="./assets/css/sass.css" />
     </head>
 <body>
-    <header class="container">
+    <header>
+        <div class="container topHeader"></div>
+        <div class="container bottomHeader">
+        <h1 class="pageTitle">Raleigh Vibes</h1></div>
 
     </header>
 
     <section>
-        <div id="searchField"></div>
-        <div id="submitButton"></div>
-        <div id="youtubeButton"></div>
-        <div id="searchResultsTable"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row" id="searchFields">
+                        <div class="col">
+                            <h2>Beginning Date:</h2>
+                            <div id="date1Field"></div>
+                        </div>
+                        <div class="col">
+                            <h2>End Date:</h2>
+                            <div id="date2Field"></div>
+                        </div>
+                        <div class="col">
+                            <h2>Click to Search!</h2>
+                            <div id="submitButton"></div>
+                        </div>
+                    </div>
+
+                    <table class="table" id="searchResultsTable"></table>
+                    <thead></thead>
+                    <tobody></tobody>
+                </div>
+
+                <div class="col-sm-4">
+                    <div id="youtubeVideo">youtube video placeholder</div>
+                </div>
+            </div>
+            
+
+        </div>
+
         <div id="newsLetterForm"></div>
 
     </section>
