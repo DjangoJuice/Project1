@@ -9,6 +9,8 @@ $.ajax({
     method: "GET",
     datatype: "json",
 }).then(function(json) {
+    console.log(json);
+    console.log(json._embedded.events[0]);
     showEvents(json);
 });
 
