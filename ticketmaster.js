@@ -16,8 +16,12 @@ $.ajax({
 
 function showEvents(json) {
     for(var i=0; i<json.page.size; i++) {
-
+        var tr = "<tr>"
+        var td = "<td>"
+        var eventname = tr + td + json._embedded.events[i].name;
+        var startdate = td + json._embedded.events[i].dates.start.localDate;
         //ADD CORRECT LOCATION
-        $("tbody").append("<p>"+json._embedded.events[i].name+"</p>");
+        $("tbody").append(eventname);
+        $("tbody").append(startdate);
     }
 };
