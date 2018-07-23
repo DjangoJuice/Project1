@@ -20,8 +20,16 @@ function showEvents(json) {
         var td = "<td>"
         var eventname = tr + td + json._embedded.events[i].name;
         var startdate = td + json._embedded.events[i].dates.start.localDate;
+        var min = td + "$" +json._embedded.events[i].priceRanges[0].min;
+        var max = "$" + json._embedded.events[i].priceRanges[0].max;
+        var picture = json._embedded.events[i].images[0].url;
+        var img = $("<img>")
+        $(img).attr("src", picture)
         //ADD CORRECT LOCATION
         $("tbody").append(eventname);
         $("tbody").append(startdate);
+        $("tbody").append(min + "-" + max);
+        $("tbody").append(picture);
+        $("tbody").append(img);
     }
 };
