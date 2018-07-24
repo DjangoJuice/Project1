@@ -11,6 +11,7 @@ $.ajax({
 }).then(function(json) {
     console.log(json);
     console.log(json._embedded.events[0]._embedded.attractions[0].name);
+    console.log(!json._embedded.events[7].priceRanges)
     showEvents(json);
 });
 
@@ -39,18 +40,18 @@ function showEvents(json) {
         var td1 = $('<td>').text(eventName);
         var startDate = json._embedded.events[i].dates.start.localDate;
         var td2 = $('<td>').text(startDate);
-        let min = json._embedded.events[i].priceRanges[0].min;
-        let max = json._embedded.events[i].priceRanges[0].max;
-        if(!json._embedded.events[i].priceRanges === undefined){
-            return min = ''
-            return max = ''
+        if(!json._embedded.events[i].priceRanges){
+            var min = ''
+            var max = ''
         } else {
+            var min = json._embedded.events[i].priceRanges[0].min
+            var max = json._embedded.events[i].priceRanges[0].max
         }
+
         console.log(min)
         var td3 = $('<td>').text(`$${min} - $${max}`);
         var startTime = json._embedded.events[i].dates.start.localTime;
         var td4 = $('<td>').text(startTime);
-        
         
         row.append(td1).append(td2).append(td3).append(td4);
         $('tbody').append(row);
