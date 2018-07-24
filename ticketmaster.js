@@ -37,7 +37,16 @@ function showEvents(json) {
 
         var row = $('<tr>');
         var eventName = json._embedded.events[i]._embedded.attractions[0].name;
-        var td1 = $('<td>').text(eventName);
+
+        // $( "#eventName" ).click(function() {
+        var td1 = $('<td>').text(eventName).addClass('event');
+        // my work
+        $(document).on('click', '.event',  function() {
+            console.log ("click");
+        })
+
+        var anchor = $('<a>')
+        td1.append(anchor)
         var startDate = json._embedded.events[i].dates.start.localDate;
         var td2 = $('<td>').text(startDate);
         if(!json._embedded.events[i].priceRanges){
