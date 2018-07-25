@@ -43,6 +43,26 @@ table#searchResultsTable {
     height: 200px;
 }
 
-footer {
-    
+.cardBody {
+    background: #94FF38;
+    color: black;
+}
+
+.cardHdr {
+    background: black;
+    color: #FFA500;
+}
+
+.cardBorder {
+    border: 1px solid black;
+}
+
+#footer {
+    height: 5em;
+    font-size: 1.5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: .3em;
+    background: linear-gradient(#94FF38, black);
+    color: orange;
+    max-width: 100%;
 }
