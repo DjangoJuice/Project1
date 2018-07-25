@@ -13,9 +13,9 @@ body {
     opacity: .5;
 }
 
-.bottomBorder {
-    background-color: black;
 
+.bottomHeader {
+    background-color: black;
 }
 
 .pageTitle {
@@ -23,9 +23,10 @@ body {
     padding: 1em;
 }
 
-section div.container { 
-    margin-left: 5em;
-    margin-right: 5em;
+div.mainSection { 
+    padding-left: 5.5em;
+    padding-right: 5.5em;
+    padding-top: 3em;
 }
 
 #searchFields h2 {
@@ -41,4 +42,7 @@ table#searchResultsTable {
     max-width: 350px;
     height: 200px;
 }
-/*#94FF38*/
+
+footer {
+    
+}
