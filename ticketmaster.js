@@ -55,7 +55,7 @@ function showEvents(json) {
         var td3 = $('<td>').text(`$${min} - $${max}`);
         var startTime = json._embedded.events[i].dates.start.localTime;
         var td4 = $('<td>').text(startTime);
-        var td5 = $("<button>").text("Buy Now!");;
+        var td5 = $("<button>").text("Buy Now!");
         
 
         row.append(td1).append(td2).append(td3).append(td4).append(td5);
