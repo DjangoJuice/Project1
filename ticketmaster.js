@@ -15,6 +15,7 @@ $.ajax({
     showEvents(json);
 });
 
+//function to display data from the ajax call
 function showEvents(json) {
     
     for(var i=0; i<json.page.size; i++) {
@@ -53,10 +54,13 @@ function showEvents(json) {
         console.log(min)
         var td3 = $('<td>').text(`$${min} - $${max}`);
         var startTime = json._embedded.events[i].dates.start.localTime;
+
         var start = moment(startTime, 'HH:mm').format('hh:mm a')
         var td4 = $('<td>').text(start);
-        
-        row.append(td1).append(td2).append(td3).append(td4);
+      
+        var td5 = $("<button>").text("Buy Now!");
+
+        row.append(td1).append(td2).append(td3).append(td4).append(td5);
         $('tbody').append(row);
     };
 };
