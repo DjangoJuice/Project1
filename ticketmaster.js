@@ -18,26 +18,15 @@ $.ajax({
 function showEvents(json) {
     
     for(var i=0; i<json.page.size; i++) {
-        
-        // var tr = $('<tr>')
-        // var td = $('<td>')
-        // var eventname = tr + td + json._embedded.events[i].name;
-        // var startdate = td.text(json._embedded.events[i].dates.start.localDate);
-        // var min = td + "$" +json._embedded.events[i].priceRanges[0].min;
-        // var max = "$" + json._embedded.events[i].priceRanges[0].max;
-        // var picture = json._embedded.events[i].images[0].url;
-        // var img = $("<img>")
-        // $(img).attr("src", picture)
-        // //ADD CORRECT LOCATION
-        // $("tbody").append(eventname);
-        // $("tbody").append(startdate);
-        // $("tbody").append(min + "-" + max);
-        // $("tbody").append(picture);
-        // $("tbody").append(img);
 
         var row = $('<tr>');
         var eventName = json._embedded.events[i]._embedded.attractions[0].name;
         var td1 = $('<td>').text(eventName);
+        td1.addClass(eventName)
+        td1.on('click', function(e){
+            debugger
+                console.log($(this).val())
+        })
         var startDate = json._embedded.events[i].dates.start.localDate;
         var td2 = $('<td>').text(startDate);
         if(!json._embedded.events[i].priceRanges){
@@ -57,3 +46,14 @@ function showEvents(json) {
         $('tbody').append(row);
     };
 };
+
+function youtubePlay (e) {
+    
+    var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+      var band_name = $('.bandName').val();
+      var target_url = `${base_url}${band_name}`;
+      var ifr = $('#iFrameVideo');
+      ifr.attr('src', target_url)
+      return false;
+}
+
