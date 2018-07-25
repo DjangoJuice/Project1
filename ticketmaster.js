@@ -21,12 +21,25 @@ function showEvents(json) {
 
         var row = $('<tr>');
         var eventName = json._embedded.events[i]._embedded.attractions[0].name;
+<<<<<<< HEAD
         var td1 = $('<td>').text(eventName);
         td1.addClass(eventName)
         td1.on('click', function(e){
             debugger
                 console.log($(this).val())
         })
+=======
+
+        // $( "#eventName" ).click(function() {
+        var td1 = $('<td>').text(eventName).addClass('event');
+        // my work
+        $(document).on('click', '.event',  function() {
+            console.log ("click");
+        })
+
+        var anchor = $('<a>')
+        td1.append(anchor)
+>>>>>>> 9b1b3d2f272407a8f3b13eaf1f563abd800148eb
         var startDate = json._embedded.events[i].dates.start.localDate;
         var td2 = $('<td>').text(startDate);
         if(!json._embedded.events[i].priceRanges){
@@ -46,6 +59,7 @@ function showEvents(json) {
         $('tbody').append(row);
     };
 };
+<<<<<<< HEAD
 
 function youtubePlay (e) {
     
@@ -57,3 +71,5 @@ function youtubePlay (e) {
       return false;
 }
 
+=======
+>>>>>>> 9b1b3d2f272407a8f3b13eaf1f563abd800148eb
