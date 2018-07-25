@@ -21,27 +21,27 @@ function showEvents(json) {
 
         var row = $('<tr>');
         var eventName = json._embedded.events[i]._embedded.attractions[0].name;
-<<<<<<< HEAD
-        var td1 = $('<td>').text(eventName);
-        td1.addClass(eventName)
-        td1.on('click', function(e){
-            debugger
-                console.log($(this).val())
-        })
-=======
 
         // $( "#eventName" ).click(function() {
         var td1 = $('<td>').text(eventName).addClass('event');
-        // my work
-        $(document).on('click', '.event',  function() {
-            console.log ("click");
+
+        // function for calling the youtube video
+        td1.on('click', function() {
+            // set the call for the url
+            var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+            var band_name = $(this).text();
+            var target_url = `${base_url}${band_name}`;
+
+            // set the attribute of the embedded iframe to the target url
+            var ifr = $('#iFrameVideo');
+            ifr.attr('src', target_url)
+            return false;
         })
 
-        var anchor = $('<a>')
-        td1.append(anchor)
->>>>>>> 9b1b3d2f272407a8f3b13eaf1f563abd800148eb
         var startDate = json._embedded.events[i].dates.start.localDate;
         var td2 = $('<td>').text(startDate);
+
+        // bypass code for items that are sold out or do not have prices listed
         if(!json._embedded.events[i].priceRanges){
             var min = ''
             var max = ''
@@ -59,17 +59,10 @@ function showEvents(json) {
         $('tbody').append(row);
     };
 };
-<<<<<<< HEAD
 
-function youtubePlay (e) {
+
+
     
-    var base_url = 'http://www.youtube.com/embed?listType=search&list=';
-      var band_name = $('.bandName').val();
-      var target_url = `${base_url}${band_name}`;
-      var ifr = $('#iFrameVideo');
-      ifr.attr('src', target_url)
-      return false;
-}
+    
 
-=======
->>>>>>> 9b1b3d2f272407a8f3b13eaf1f563abd800148eb
+
