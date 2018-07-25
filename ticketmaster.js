@@ -59,10 +59,3 @@ function showEvents(json) {
         $('tbody').append(row);
     };
 };
-
-
-
-    
-    
-
-
