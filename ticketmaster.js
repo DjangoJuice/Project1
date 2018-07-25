@@ -18,37 +18,30 @@ $.ajax({
 function showEvents(json) {
     
     for(var i=0; i<json.page.size; i++) {
-        
-        // var tr = $('<tr>')
-        // var td = $('<td>')
-        // var eventname = tr + td + json._embedded.events[i].name;
-        // var startdate = td.text(json._embedded.events[i].dates.start.localDate);
-        // var min = td + "$" +json._embedded.events[i].priceRanges[0].min;
-        // var max = "$" + json._embedded.events[i].priceRanges[0].max;
-        // var picture = json._embedded.events[i].images[0].url;
-        // var img = $("<img>")
-        // $(img).attr("src", picture)
-        // //ADD CORRECT LOCATION
-        // $("tbody").append(eventname);
-        // $("tbody").append(startdate);
-        // $("tbody").append(min + "-" + max);
-        // $("tbody").append(picture);
-        // $("tbody").append(img);
 
         var row = $('<tr>');
         var eventName = json._embedded.events[i]._embedded.attractions[0].name;
 
         // $( "#eventName" ).click(function() {
         var td1 = $('<td>').text(eventName).addClass('event');
-        // my work
-        $(document).on('click', '.event',  function() {
-            console.log ("click");
+
+        // function for calling the youtube video
+        td1.on('click', function() {
+            // set the call for the url
+            var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+            var band_name = $(this).text();
+            var target_url = `${base_url}${band_name}`;
+
+            // set the attribute of the embedded iframe to the target url
+            var ifr = $('#iFrameVideo');
+            ifr.attr('src', target_url)
+            return false;
         })
 
-        var anchor = $('<a>')
-        td1.append(anchor)
         var startDate = json._embedded.events[i].dates.start.localDate;
         var td2 = $('<td>').text(startDate);
+
+        // bypass code for items that are sold out or do not have prices listed
         if(!json._embedded.events[i].priceRanges){
             var min = ''
             var max = ''
