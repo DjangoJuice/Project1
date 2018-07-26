@@ -49,20 +49,11 @@
         <div class="container-fluid mainSection">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="row" id="searchFields">
-                        <div class="col">
-                            <h2>Beginning Date:</h2>
-                            <div id="date1Field"></div>
-                        </div>
-                        <div class="col">
-                            <h2>End Date:</h2>
-                            <div id="date2Field"></div>
-                        </div>
-                        <div class="col">
-                            <h2>Click to Search!</h2>
-                            <div id="submitButton"></div>
-                        </div>
-                    </div>
+                    <form id="search-form">
+                        <label>Date Range Start: <input type="date" id="date-start"></label>
+                        <label>Date Range End: <input type="date" id="date-end"></label>
+                        <button class="btn btn-primary" id="submit-button">Submit</button>
+                    </form>
 
                     <table class="table" id="searchResultsTable">
                         <thead>
@@ -128,8 +119,6 @@
 <script src="ticketmaster.js">
     </script>
 <script src="firebase.js">
-    </script>
-<script src="youtube.js">
     </script>
 </body>
 </html>
