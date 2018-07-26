@@ -39,6 +39,7 @@ function showEvents(json) {
             return false;
         })
 
+        //start date added to a collumn
         var startDate = json._embedded.events[i].dates.start.localDate;
         var td2 = $('<td>').text(startDate);
 
@@ -51,16 +52,28 @@ function showEvents(json) {
             var max = json._embedded.events[i].priceRanges[0].max
         }
 
+        //price range added to collumn
         console.log(min)
         var td3 = $('<td>').text(`$${min} - $${max}`);
-        var startTime = json._embedded.events[i].dates.start.localTime;
 
+        //Start time added to a collumn
+        var startTime = json._embedded.events[i].dates.start.localTime;
         var start = moment(startTime, 'HH:mm').format('hh:mm a')
         var td4 = $('<td>').text(start);
-      
-        var td5 = $("<button>").text("Buy Now!");
+        
 
+        //Adding urls to Buy now button and adding button to collumn
+        var url = json._embedded.events[i].url;
+        console.log(url);
+        var td5 = $("<button>").text("Buy Now!");
+      
+        //appending all collumns to the row and appending row to the table
         row.append(td1).append(td2).append(td3).append(td4).append(td5);
         $('tbody').append(row);
+
+        //click event for buying tickets
+        var url = "window.location=" + "'" + json._embedded.events[i].url + "'";
+        td5.attr('onclick', url);
+        td5.attr('target', "_blank");
     };
 };
