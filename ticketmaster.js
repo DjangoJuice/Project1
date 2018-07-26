@@ -1,10 +1,11 @@
 $('#submit-button').on('click', function(e){
     e.preventDefault()
+    $('tbody').empty()
     var key = "HC4MdAnqSfzwkac8R6UyzqQbTcHqzGuL";
     var secret = "oUttZpkLGpTyWkuf";
     var dateStart = $('#date-start').val()
     var dateEnd = $('#date-end').val()
-    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + key + "&city=Raleigh" + "&sort=date,asc" + "&startDateTime=" + dateStart + "T01:00:00Z" + "&endDateTime=" + dateEnd + "T01:00:00Z"
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + key + "&city=Raleigh" + "&sort=date,asc" + "&startDateTime=" + dateStart + "T01:00:00Z" + "&endDateTime=" + dateEnd + "T23:59:59Z"
     console.log("queryurl: " + queryURL);
     $.ajax({
         url: queryURL,
