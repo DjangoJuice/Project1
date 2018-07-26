@@ -13,9 +13,9 @@ body {
     opacity: .5;
 }
 
-.bottomBorder {
-    background-color: black;
 
+.bottomHeader {
+    background-color: black;
 }
 
 .pageTitle {
@@ -23,9 +23,10 @@ body {
     padding: 1em;
 }
 
-section div.container { 
-    margin-left: 5em;
-    margin-right: 5em;
+div.mainSection { 
+    padding-left: 5.5em;
+    padding-right: 5.5em;
+    padding-top: 3em;
 }
 
 #searchFields h2 {
@@ -41,4 +42,27 @@ table#searchResultsTable {
     max-width: 350px;
     height: 200px;
 }
-/*#94FF38*/
+
+.cardBody {
+    background: #94FF38;
+    color: black;
+}
+
+.cardHdr {
+    background: black;
+    color: #FFA500;
+}
+
+.cardBorder {
+    border: 1px solid black;
+}
+
+#footer {
+    height: 5em;
+    font-size: 1.5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: .3em;
+    background: linear-gradient(#94FF38, black);
+    color: orange;
+    max-width: 100%;
+}
