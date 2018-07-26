@@ -1,19 +1,22 @@
-var key = "HC4MdAnqSfzwkac8R6UyzqQbTcHqzGuL";
-var secret = "oUttZpkLGpTyWkuf";
-//query url including raleigh location
-var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + key + "&city=Raleigh" + "&sort=date,asc"
-console.log("queryurl: " + queryURL);
+$('#submit-button').on('click', function(e){
+    e.preventDefault()
+    $('tbody').empty()
+    var key = "HC4MdAnqSfzwkac8R6UyzqQbTcHqzGuL";
+    var secret = "oUttZpkLGpTyWkuf";
+    var dateStart = $('#date-start').val()
+    var dateEnd = $('#date-end').val()
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + key + "&city=Raleigh" + "&sort=date,asc" + "&startDateTime=" + dateStart + "T01:00:00Z" + "&endDateTime=" + dateEnd + "T23:59:59Z"
+    console.log("queryurl: " + queryURL);
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        datatype: "json",
+    }).then(function(json) {
+        console.log(json);
+        showEvents(json);
+    });  
+})
 
-$.ajax({
-    url: queryURL,
-    method: "GET",
-    datatype: "json",
-}).then(function(json) {
-    console.log(json);
-    console.log(json._embedded.events[0]._embedded.attractions[0].name);
-    console.log(!json._embedded.events[7].priceRanges)
-    showEvents(json);
-});
 
 //function to display data from the ajax call
 function showEvents(json) {
@@ -76,4 +79,5 @@ function showEvents(json) {
         td5.attr('onclick', url);
         td5.attr('target', "_blank");
     };
+
 };
