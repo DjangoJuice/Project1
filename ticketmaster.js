@@ -1,7 +1,18 @@
+var key = "HC4MdAnqSfzwkac8R6UyzqQbTcHqzGuL"
+var startURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + key + "&city=Raleigh" + "&sort=date,asc"
+
+$.ajax({
+    url: startURL,
+    method: "GET",
+    datatype: "json",
+}).then(function(json) {
+    console.log(json);
+    showEvents(json);
+});  
+
 $('#submit-button').on('click', function(e){
     e.preventDefault()
     $('tbody').empty()
-    var key = "HC4MdAnqSfzwkac8R6UyzqQbTcHqzGuL";
     var secret = "oUttZpkLGpTyWkuf";
     var dateStart = $('#date-start').val()
     var dateEnd = $('#date-end').val()
@@ -79,6 +90,9 @@ function showEvents(json) {
         //click event for buying tickets
         var url = "window.location=" + "'" + json._embedded.events[i].url + "'";
         buyCol.attr('onclick', url);
+        buyCol.addClass('btn')
+        buyCol.addClass('btn-primary')
+        buyCol.css('vertical-align', 'middle')
         buyCol.attr('target', "_blank");
     };
 
