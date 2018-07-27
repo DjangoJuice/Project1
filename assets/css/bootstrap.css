@@ -66,3 +66,8 @@ table#searchResultsTable {
     color: orange;
     max-width: 100%;
 }
+
+.table-heads {
+    color: black;
+    background-color: orange;
+}
