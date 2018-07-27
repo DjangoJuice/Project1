@@ -27,10 +27,10 @@ function showEvents(json) {
         var eventName = json._embedded.events[i]._embedded.attractions[0].name;
 
         // $( "#eventName" ).click(function() {
-        var td1 = $('<td>').text(eventName).addClass('event');
+        var bandNameCol = $('<td>').text(eventName).addClass('event');
 
         // function for calling the youtube video
-        td1.on('click', function() {
+        bandNameCol.on('click', function() {
             // set the call for the url
             var base_url = 'http://www.youtube.com/embed?listType=search&list=';
             var band_name = $(this).text();
@@ -42,9 +42,11 @@ function showEvents(json) {
             return false;
         })
 
+        var venueCol = json._embedded.events[i]._embedded.venues[0].name;
+
         //start date added to a collumn
         var startDate = json._embedded.events[i].dates.start.localDate;
-        var td2 = $('<td>').text(startDate);
+        var dateCol = $('<td>').text(startDate);
 
         // bypass code for items that are sold out or do not have prices listed
         if(!json._embedded.events[i].priceRanges){
@@ -57,27 +59,27 @@ function showEvents(json) {
 
         //price range added to collumn
         console.log(min)
-        var td3 = $('<td>').text(`$${min} - $${max}`);
+        var priceRangeCol = $('<td>').text(`$${min} - $${max}`);
 
         //Start time added to a collumn
         var startTime = json._embedded.events[i].dates.start.localTime;
         var start = moment(startTime, 'HH:mm').format('hh:mm a')
-        var td4 = $('<td>').text(start);
+        var startTimeCol = $('<td>').text(start);
         
 
         //Adding urls to Buy now button and adding button to collumn
         var url = json._embedded.events[i].url;
         console.log(url);
-        var td5 = $("<button>").text("Buy Now!");
+        var buyCol = $("<button>").text("Buy Now!");
       
         //appending all collumns to the row and appending row to the table
-        row.append(td1).append(td2).append(td3).append(td4).append(td5);
+        row.append(bandNameCol).append(venueCol).append(priceRangeCol).append(dateCol).append(startTimeCol).append(buyCol);
         $('tbody').append(row);
 
         //click event for buying tickets
         var url = "window.location=" + "'" + json._embedded.events[i].url + "'";
-        td5.attr('onclick', url);
-        td5.attr('target', "_blank");
+        buyCol.attr('onclick', url);
+        buyCol.attr('target', "_blank");
     };
 
 };
