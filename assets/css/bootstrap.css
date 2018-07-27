@@ -65,6 +65,7 @@ table#searchResultsTable {
     background: linear-gradient(#94FF38, black 35%);
     color: orange;
     max-width: 100%;
+
     padding-top: 3em;
     padding-left: 4em;
 }
@@ -91,4 +92,9 @@ span.ascii {
 
 div.flex-end {
     /* border: solid 1px green; */
+}
+
+.table-heads {
+    color: black;
+    background-color: orange;
 }
