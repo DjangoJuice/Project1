@@ -69,9 +69,11 @@ function showEvents(json) {
         var url = json._embedded.events[i].url;
         console.log(url);
         var td5 = $("<button>").text("Buy Now!");
+
+        var td6 = json._embedded.events[i]._embedded.venues[0].name;
       
         //appending all collumns to the row and appending row to the table
-        row.append(td1).append(td2).append(td3).append(td4).append(td5);
+        row.append(td1).append(td6).append(td3).append(td2).append(td4).append(td5);
         $('tbody').append(row);
 
         //click event for buying tickets
