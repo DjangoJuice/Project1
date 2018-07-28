@@ -11,16 +11,28 @@ body {
     border-bottom: solid 1px white;
     height: 5em;
     opacity: .5;
+    padding-left: 5.5em;
+    padding-right: 5.5em;
 }
 
 
 .bottomHeader {
     background-color: black;
+    padding-left: 5.5em;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.bottomHeader img {
+    padding-bottom: 10px;
+    float: left;
 }
 
 .pageTitle {
     color: orange;
-    padding: 1em 1em 1em 0;
+    padding-left: 10em;
+    padding-top: 10px;
+
 }
 
 div.mainSection { 
@@ -102,5 +114,13 @@ div.flex-end {
 
 .tableFixed {
    font-size: 13px;
+}
+
+#Thanks {
+    background: orange;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
 }
 
