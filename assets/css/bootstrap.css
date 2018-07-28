@@ -97,16 +97,6 @@ span.ascii {
     position: absolute; */
 }
 
-#copyrightDiv {
-    /*border: solid 1px red;
-    height: 100%;
-     position: relative; */
-}
-
-div.flex-end {
-    /* border: solid 1px green; */
-}
-
 .table-heads {
     color: black;
     background-color: orange;
