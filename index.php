@@ -138,5 +138,6 @@
     </script>
 <script src="firebase.js">
     </script>
+<script src="lightbase.js"></script>
 </body>
 </html>
