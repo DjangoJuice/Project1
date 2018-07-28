@@ -6,28 +6,6 @@ body {
     background-color: #94FF38;
 }
 
-.topHeader {
-    background-color: black;
-    border-bottom: solid 1px white;
-    height: 5em;
-    opacity: .5;
-    padding-left: 5.5em;
-    padding-right: 5.5em;
-}
-
-
-.bottomHeader {
-    background-color: black;
-    padding-left: 5.5em;
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
-
-.bottomHeader img {
-    padding-bottom: 10px;
-    float: left;
-}
-
 .pageTitle {
     color: orange;
     padding-left: 10em;
@@ -114,3 +92,55 @@ span.ascii {
     border: 1px solid black;
 }
 
+@media screen and (min-width: 1199px) {
+
+    .topHeader {
+        background-color: black;
+        background-image: url("../images/RaleighVibesLogo.png");
+        background-repeat: no-repeat;
+        justify-content: center;
+        max-width: 1250px;
+        height: 300px;
+    }
+
+    .bottomHeader {
+        background-color: black;
+        color: orange;
+        justify-content: center;
+
+    }
+
+    div.bottomHeader h1 {
+        text-align: center;
+        padding-bottom: 1.5em;
+        font-family: 'Do Hyeon', sans-serif;
+        letter-spacing: .2em;
+    }
+}  
+
+@media screen and (max-width: 1198px) {
+
+    .topHeader {
+        background-color: black;
+        background-image: url("../images/Logo-small.png");
+        background-repeat: no-repeat;
+        background-position: center; 
+        justify-content: center;
+        /* max-width: 1200px; */
+        height: 150px;
+    }
+
+    .bottomHeader {
+        background-color: black;
+        color: orange;
+        justify-content: center;
+
+    }
+
+    div.bottomHeader h1 {
+        text-align: center;
+        padding-bottom: 1.5em;
+        font-family: 'Do Hyeon', sans-serif;
+        letter-spacing: .2em;
+    }
+}

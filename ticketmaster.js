@@ -43,7 +43,7 @@ function showEvents(json) {
         // function for calling the youtube video
         bandNameCol.on('click', function() {
             // set the call for the url
-            var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+            var base_url = 'https://www.youtube.com/embed?listType=search&list=';
             var band_name = $(this).text();
             var target_url = `${base_url}${band_name}`;
 
@@ -88,7 +88,7 @@ function showEvents(json) {
         $('tbody').append(row);
 
         //click event for buying tickets
-        var url = "window.location=" + "'" + json._embedded.events[i].url + "'";
+        var url = "window.open(" + "'" + json._embedded.events[i].url + "')";
         buyCol.attr('onclick', url);
         buyCol.addClass('btn')
         buyCol.addClass('btn-primary')
