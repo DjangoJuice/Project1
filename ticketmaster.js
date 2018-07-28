@@ -53,7 +53,7 @@ function showEvents(json) {
             return false;
         })
 
-        var venueCol = json._embedded.events[i]._embedded.venues[0].name;
+        var venueCol = $('<td>').text(json._embedded.events[i]._embedded.venues[0].name);
 
         //start date added to a collumn
         var startDate = json._embedded.events[i].dates.start.localDate;
