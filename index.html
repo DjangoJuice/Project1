@@ -38,14 +38,16 @@
 
     <div class="container-fluid mainSection">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <form id="search-form">
                         <label>Date Range Start: <input type="date" id="date-start"></label>
                         <label>Date Range End: <input type="date" id="date-end"></label>
                         <button class="btn cardHdr" id="submit-button">Submit</button>
                     </form>
                     <br>
-
+                </div>
+                
+                <div class="col-lg-9">
                     <table class="table table-dark tableFixed" id="searchResultsTable">
                         <thead>
                             <tr class="table-heads">
@@ -62,7 +64,13 @@
                 </div>
 
                 <div class="col-sm-3">
-                    <iframe id="iFrameVideo">youtube video placeholder</iframe><br>
+                    <div class="card cardBorder">
+                        <h5 class="card-header cardHdr text-center">Click on a band name to preview!</h5>
+                        <div class="card-body cardBody">
+                        <iframe id="iFrameVideo">youtube video placeholder</iframe><br>
+                        </div>
+                    </div>
+                    <br>
                     <div class="card cardBorder">
                         <h5 class="card-header cardHdr text-center">Fill out the form to receive a ticket discount coupon!</h5>
                         <div class="card-body cardBody">
