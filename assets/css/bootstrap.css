@@ -147,10 +147,6 @@ div.flex-end {
     }
 }  
 
-.tableFixed {
-    box-shadow: 3px 3px 3px 3px black;
-}
-
 #iFrameVideo {
     width: 100%;
     height: 25%;
