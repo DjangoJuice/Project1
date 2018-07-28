@@ -66,32 +66,31 @@
                     <div class="card cardBorder">
                         <h5 class="card-header cardHdr text-center">Fill out the form to receive a ticket discount coupon!</h5>
                         <div class="card-body cardBody">
-                            <form id="coupon-form">
+                            <form id="coupon-form" action="mail.php" method="POST">
                                 <div class="form-group">
                                     <label for="name" class="bold container-fluid">Name</label>
-                                    <input type="text" class="form-control cardBody cardBorder" id="name">
+                                    <input type="text" name="name" class="form-control cardBody cardBorder" id="name">
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="bold container-fluid">Email</label>
-                                    <input type="email" class="form-control cardBody cardBorder" id="email">
+                                    <input type="email" name="email" class="form-control cardBody cardBorder" id="email">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class="bold container-fluid">Phone (for text message)</label>
-                                    <input type="tel" class="form-control cardBody cardBorder" id="phone">
+                                    <input type="tel" name="phone" class="form-control cardBody cardBorder" id="phone">
                                 </div>
                                 <div class="form-group">
                                     <label for="pref" class="bold container-fluid">Contact Preferance</label>
                                     <div>
-                                        <input type = "radio" name = "pref" id = "eMail" value = "eMail" checked = "checked">Send Coupon by Email<br>
-                                        <input type = "radio" name = "pref" id = "txt" value = "txt">Send Coupon by Text Message<br>
+                                        <input type="radio" name="pref" id="eMail" value="eMail" checked="checked">Send Coupon by Email<br>
+                                        <input type="radio" name="pref" id="txt" value="txt">Send Coupon by Text Message<br>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn cardHdr" id="formSubmit">Submit</button>
+                                <button type="submit" class="btn cardHdr" id="formSubmit" value=" Send ">Submit</button>
                             </form>
                         </div>
                 </div>
             </div>
-
         </div>
         </div>
 
