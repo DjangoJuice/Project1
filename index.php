@@ -46,7 +46,7 @@
                     </form>
                     <br>
 
-                    <table class="table table-dark tableFixed" id="searchResultsTable">
+                    <table class="table table-dark" id="searchResultsTable">
                         <thead>
                             <tr class="table-heads">
                                 <th scope="col">Band Name</th>
@@ -88,6 +88,9 @@
                                 </div>
                                 <button type="submit" class="btn cardHdr" id="formSubmit" value=" Send ">Submit</button>
                             </form>
+                         <?php
+                            echo "Hello World!";
+                        ?>
                         </div>
                 </div>
             </div>

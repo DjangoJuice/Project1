@@ -20,7 +20,7 @@ body {
 
 .pageTitle {
     color: orange;
-    padding: 1em;
+    padding: 1em 1em 1em 0;
 }
 
 div.mainSection { 
