@@ -42,6 +42,4 @@ $(document).ready(function(){
         // Uploads newCust object to the database
         database.ref().push(newCust);
     });
-
-
 });
