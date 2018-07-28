@@ -88,7 +88,7 @@ function showEvents(json) {
         $('tbody').append(row);
 
         //click event for buying tickets
-        var url = "window.location=" + "'" + json._embedded.events[i].url + "'";
+        var url = "window.open(" + "'" + json._embedded.events[i].url + "')";
         buyCol.attr('onclick', url);
         buyCol.addClass('btn')
         buyCol.addClass('btn-primary')
