@@ -53,16 +53,49 @@ table#searchResultsTable {
     color: #FFA500;
 }
 
+
 .cardBorder {
     border: 1px solid black;
 }
 
 #footer {
-    height: 5em;
-    font-size: 1.5em;
+    height: 12em;
+    font-size: .8em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: .3em;
-    background: linear-gradient(#94FF38, black);
+    background: linear-gradient(#94FF38, black 35%);
     color: orange;
     max-width: 100%;
+
+    padding-top: 3em;
+    padding-left: 4em;
+}
+
+span.ascii {
+    font-size: .4em;
+    line-height: 0;
+    font-weight: bolder;
+    color: white;
+    /* display: block; */
+}
+
+#copyright {
+    font-size: 1.5em;
+    /*border: solid 1px purple;
+    position: absolute; */
+}
+
+#copyrightDiv {
+    /*border: solid 1px red;
+    height: 100%;
+     position: relative; */
+}
+
+div.flex-end {
+    /* border: solid 1px green; */
+}
+
+.table-heads {
+    color: black;
+    background-color: orange;
 }

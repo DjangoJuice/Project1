@@ -1,19 +1,33 @@
-var key = "HC4MdAnqSfzwkac8R6UyzqQbTcHqzGuL";
-var secret = "oUttZpkLGpTyWkuf";
-//query url including raleigh location
-var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + key + "&city=Raleigh" + "&sort=date,asc"
-console.log("queryurl: " + queryURL);
+var key = "HC4MdAnqSfzwkac8R6UyzqQbTcHqzGuL"
+var startURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + key + "&city=Raleigh" + "&sort=date,asc"
 
 $.ajax({
-    url: queryURL,
+    url: startURL,
     method: "GET",
     datatype: "json",
 }).then(function(json) {
     console.log(json);
-    console.log(json._embedded.events[0]._embedded.attractions[0].name);
-    console.log(!json._embedded.events[7].priceRanges)
     showEvents(json);
-});
+});  
+
+$('#submit-button').on('click', function(e){
+    e.preventDefault()
+    $('tbody').empty()
+    var secret = "oUttZpkLGpTyWkuf";
+    var dateStart = $('#date-start').val()
+    var dateEnd = $('#date-end').val()
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + key + "&city=Raleigh" + "&sort=date,asc" + "&startDateTime=" + dateStart + "T01:00:00Z" + "&endDateTime=" + dateEnd + "T23:59:59Z"
+    console.log("queryurl: " + queryURL);
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        datatype: "json",
+    }).then(function(json) {
+        console.log(json);
+        showEvents(json);
+    });  
+})
+
 
 //function to display data from the ajax call
 function showEvents(json) {
@@ -24,10 +38,10 @@ function showEvents(json) {
         var eventName = json._embedded.events[i]._embedded.attractions[0].name;
 
         // $( "#eventName" ).click(function() {
-        var td1 = $('<td>').text(eventName).addClass('event');
+        var bandNameCol = $('<td>').text(eventName).addClass('event');
 
         // function for calling the youtube video
-        td1.on('click', function() {
+        bandNameCol.on('click', function() {
             // set the call for the url
             var base_url = 'http://www.youtube.com/embed?listType=search&list=';
             var band_name = $(this).text();
@@ -39,8 +53,11 @@ function showEvents(json) {
             return false;
         })
 
+        var venueCol = json._embedded.events[i]._embedded.venues[0].name;
+
+        //start date added to a collumn
         var startDate = json._embedded.events[i].dates.start.localDate;
-        var td2 = $('<td>').text(startDate);
+        var dateCol = $('<td>').text(startDate);
 
         // bypass code for items that are sold out or do not have prices listed
         if(!json._embedded.events[i].priceRanges){
@@ -51,16 +68,32 @@ function showEvents(json) {
             var max = json._embedded.events[i].priceRanges[0].max
         }
 
+        //price range added to collumn
         console.log(min)
-        var td3 = $('<td>').text(`$${min} - $${max}`);
+        var priceRangeCol = $('<td>').text(`$${min} - $${max}`);
+
+        //Start time added to a collumn
         var startTime = json._embedded.events[i].dates.start.localTime;
-
         var start = moment(startTime, 'HH:mm').format('hh:mm a')
-        var td4 = $('<td>').text(start);
-      
-        var td5 = $("<button>").text("Buy Now!");
+        var startTimeCol = $('<td>').text(start);
+        
 
-        row.append(td1).append(td2).append(td3).append(td4).append(td5);
+        //Adding urls to Buy now button and adding button to collumn
+        var url = json._embedded.events[i].url;
+        console.log(url);
+        var buyCol = $("<button>").text("Buy Now!");
+      
+        //appending all collumns to the row and appending row to the table
+        row.append(bandNameCol).append(venueCol).append(priceRangeCol).append(dateCol).append(startTimeCol).append(buyCol);
         $('tbody').append(row);
+
+        //click event for buying tickets
+        var url = "window.location=" + "'" + json._embedded.events[i].url + "'";
+        buyCol.attr('onclick', url);
+        buyCol.addClass('btn')
+        buyCol.addClass('btn-primary')
+        buyCol.css('vertical-align', 'middle')
+        buyCol.attr('target', "_blank");
     };
+
 };
