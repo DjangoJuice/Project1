@@ -6,11 +6,11 @@ body {
     background-color: #94FF38;
 }
 
-
-
 .pageTitle {
     color: orange;
-    padding: 1em 1em 1em 0;
+    padding-left: 10em;
+    padding-top: 10px;
+
 }
 
 div.mainSection { 
@@ -75,16 +75,6 @@ span.ascii {
     position: absolute; */
 }
 
-#copyrightDiv {
-    /*border: solid 1px red;
-    height: 100%;
-     position: relative; */
-}
-
-div.flex-end {
-    /* border: solid 1px green; */
-}
-
 .table-heads {
     color: black;
     background-color: orange;
@@ -92,6 +82,14 @@ div.flex-end {
 
 .tableFixed {
    font-size: 13px;
+}
+
+#Thanks {
+    background: orange;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
 }
 
 @media screen and (min-width: 1199px) {
@@ -145,4 +143,4 @@ div.flex-end {
         font-family: 'Do Hyeon', sans-serif;
         letter-spacing: .2em;
     }
-}  
+}
