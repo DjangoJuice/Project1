@@ -55,7 +55,7 @@ function showEvents(json) {
 
         var venueCol = $('<td>').text(json._embedded.events[i]._embedded.venues[0].name);
 
-        //start date added to a collumn
+        //start date added to a column
         var startDate = json._embedded.events[i].dates.start.localDate;
         var dateCol = $('<td>').text(startDate);
 
@@ -68,22 +68,22 @@ function showEvents(json) {
             var max = json._embedded.events[i].priceRanges[0].max
         }
 
-        //price range added to collumn
+        //price range added to column
         console.log(min)
         var priceRangeCol = $('<td>').text(`$${min} - $${max}`);
 
-        //Start time added to a collumn
+        //Start time added to a column
         var startTime = json._embedded.events[i].dates.start.localTime;
         var start = moment(startTime, 'HH:mm').format('hh:mm a')
         var startTimeCol = $('<td>').text(start);
         
 
-        //Adding urls to Buy now button and adding button to collumn
+        //Adding urls to Buy now button and adding button to column
         var url = json._embedded.events[i].url;
         console.log(url);
         var buyCol = $("<button>").text("Buy Now!");
       
-        //appending all collumns to the row and appending row to the table
+        //appending all columns to the row and appending row to the table
         row.append(bandNameCol).append(venueCol).append(priceRangeCol).append(dateCol).append(startTimeCol).append(buyCol);
         $('tbody').append(row);
 
