@@ -43,6 +43,7 @@ $(document).ready(function(){
         database.ref().push(newCust);
 
         // Display thank-you
+        $("#response").html("<br><div id='Thanks'>");
         $("#Thanks").html("<h5>Thank you!  Your coupon is on its way!</h5>");
     });
 });
