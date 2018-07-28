@@ -4,9 +4,10 @@
 <?php
 
 /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
+$name = $HTTP_POST_VARS['name'];
 $email = $HTTP_POST_VARS['email'];
 $subject = 'Discount Concert Coupon';
-$message = '';
+$message = 'Dear ';
 
 /* PHP form validation: the script checks that the Email field contains a valid email address and the Subject field isn't empty. preg_match performs a regular expression match. It's a very powerful PHP function to validate form fields and other strings - see PHP manual for details. */
 if (!preg_match("/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/", $email)) {
