@@ -41,5 +41,8 @@ $(document).ready(function(){
         };
         // Uploads newCust object to the database
         database.ref().push(newCust);
+
+        // Display thank-you
+        $("#Thanks").html("<h5>Thank you!  Your coupon is on its way!</h5>");
     });
 });
