@@ -32,7 +32,8 @@
     <header>
         <div class="container topHeader"></div>
         <div class="container bottomHeader">
-        <h1 class="pageTitle">Raleigh Vibes</h1></div>
+        <div class="pageTitle">
+            <img src="/assets/images/Logo-small.png"><h1>Raleigh Vibes</h1></div>
     </header>
 
     <div class="container-fluid mainSection">
