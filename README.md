@@ -15,3 +15,5 @@ Victor Garrido
 
 Acknowledgements:
 Thanks UNC Coding Boot Camp for encouraging this collaboration!
+
+This project can be viewed at:  https://djangojuice.github.io/Project1/
